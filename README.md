@@ -11,8 +11,8 @@
 
 ## Association
 
-has_many: diaries 
-has_many: comments 
+has_many: diaries  
+has_many: comments  
 
 ### diariesテーブル
 
@@ -24,10 +24,10 @@ has_many: comments
 
 ## Association
 
-belongs_to: user 
-has_many: comments 
-has_many: tags, through: :diary_tags 
-has_many: diary_tags 
+belongs_to: user  
+has_many: comments  
+has_many: tags, through: :diary_tags  
+has_many: diary_tags  
 
 ### commentsテーブル
 
@@ -39,8 +39,8 @@ has_many: diary_tags
 
 ## Association
 
-belongs_to: user 
-belongs_to: diary 
+belongs_to: user  
+belongs_to: diary  
 
 ### diary_tagsテーブル
 
@@ -51,8 +51,8 @@ belongs_to: diary
 
 ## Association
 
-belongs_to: diary 
-belongs_to: tag 
+belongs_to: diary  
+belongs_to: tag  
 
 ### tagsテーブル
 
@@ -62,5 +62,5 @@ belongs_to: tag
 
 ## Association
 
-has_many: diaries, through: :diary_tags 
-has_many: diary_tags 
+has_many: diaries, through: :diary_tags  
+has_many: diary_tags  
