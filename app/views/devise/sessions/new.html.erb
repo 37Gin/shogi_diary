@@ -1,0 +1,30 @@
+<div class="sign-up-content">
+
+  <div class="sign-up-title">
+    <h2>サインイン</h2>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+    <div class="sign-up-form">
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "text-form" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "current-password", class: "text-form" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "サインイン" %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= link_to "新規登録", new_registration_path(resource_name) %><br />
+  </div>
+
+</div>
