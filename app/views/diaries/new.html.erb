@@ -1,0 +1,21 @@
+<h1>新規投稿ページ</h1>
+
+<%= form_with model: @diary, local: true do |f| %>
+  <div>
+    <%= f.label "タイトル" %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label "画像" %>
+  </div>
+  <div>
+    <%= f.label "内容" %>
+    <%= f.text_area :content %>
+  </div>
+  <div>
+    <%= f.label "タグ" %>
+  </div>
+  <div>
+    <%= f.submit "投稿" %>
+  </div>
+<% end %>
