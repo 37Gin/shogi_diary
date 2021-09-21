@@ -5,4 +5,10 @@ class UsersController < ApplicationController
     @diaries = @user.diaries
   end
 
+  def edit
+  end
+
+  def update
+  end
+
 end
