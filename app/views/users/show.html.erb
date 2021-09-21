@@ -9,6 +9,7 @@
   <%= "投稿記事一覧" %><br/>
   <% @diaries.each do |diary| %>
     <%= diary.title %>
+    <%= link_to "詳細", diary_path(diary.id) %>
     <%= image_tag diary.image if diary.image.attached? %>
   <% end %>
 </div>
