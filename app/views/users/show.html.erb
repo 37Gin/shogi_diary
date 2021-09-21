@@ -1,1 +1,14 @@
-ユーザーページ
+<%= "#{@user.name}さんのページ" %>
+
+<div>
+  <%= "自己紹介文" %><br/>
+  <%= @user.introduction %>
+</div>
+
+<div>
+  <%= "投稿記事一覧" %><br/>
+  <% @diaries.each do |diary| %>
+    <%= diary.title %>
+    <%= image_tag diary.image if diary.image.attached? %>
+  <% end %>
+</div>
