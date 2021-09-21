@@ -14,7 +14,7 @@
       <b><a href="/" class="header-title">SHOGI DIARY</a></b>
       <div class="header-btns">
         <% if user_signed_in? %>
-          <%= link_to "#{current_user.name}", "#", class: "header-btn" %>
+          <%= link_to "#{current_user.name}", user_path(current_user.id), class: "header-btn" %>
           <%= link_to "新規投稿",  new_diary_path, class: "header-btn" %>
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header-btn" %>
         <% else %>
