@@ -1,0 +1,21 @@
+更新ページ
+<%= form_with model: @diary, local: true do |f| %>
+  <div>
+    <%= f.label "タイトル" %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label "画像" %>
+    <%= f.file_field :image %>
+  </div>
+  <div>
+    <%= f.label "内容" %>
+    <%= f.text_area :content %>
+  </div>
+  <div>
+    <%= f.label "タグ" %>
+  </div>
+  <div>
+    <%= f.submit "更新" %>
+  </div>
+<% end %>
