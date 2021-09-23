@@ -86,13 +86,13 @@ header {
   background-color: orange;
   overflow: scroll;
   margin-left: 50px;
-  margin-top: 50px;
 }
 
 .main-bar-title {
   font-size: 36px;
   width: 100%;
   height: 50px;
+  margin-top: 50px;
 }
 
 .diary-box {
@@ -107,6 +107,7 @@ header {
 .diary-items {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .diary-item {
@@ -115,7 +116,7 @@ header {
   width: 400px;
   background-color: rgb(200, 247, 194);
   margin-right: 50px;
-  margin-bottom: 50px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
 }
@@ -149,6 +150,7 @@ header {
   font-size: 24px;
   text-align: center;
   justify-content: center;
+  margin-top: 50px;
 }
 
 
