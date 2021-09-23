@@ -1,21 +1,30 @@
-更新ページ
-<%= form_with model: @diary, local: true do |f| %>
-  <div>
-    <%= f.label "タイトル" %>
-    <%= f.text_field :title %>
+<div class="diary-content">
+
+  <div class="diary-title">
+    記事の更新
   </div>
-  <div>
-    <%= f.label "画像" %>
-    <%= f.file_field :image %>
+
+  <%= form_with model: @diary, local: true do |f| %>
+  <div class="diary-form">
+    <div class="field">
+      <%= f.label "タイトル" %><br/>
+      <%= f.text_field :title, class: "text-form" %>
+    </div>
+    <div class="field">
+      <%= f.label "画像" %><br/>
+      <%= f.file_field :image %>
+    </div>
+    <div class="field">
+      <%= f.label "内容" %><br/>
+      <%= f.text_area :content, class: "text-area" %>
+    </div>
+    <div class="field">
+      <%= f.label "タグ" %><br/>
+      <%= f.text_field :tag_name, class: "text-form" %>
+    </div>
+    <div class="actions"><br/>
+      <%= f.submit "更新" %>
+    </div>
   </div>
-  <div>
-    <%= f.label "内容" %>
-    <%= f.text_area :content %>
-  </div>
-  <div>
-    <%= f.label "タグ" %>
-  </div>
-  <div>
-    <%= f.submit "更新" %>
-  </div>
-<% end %>
+  <% end %>
+</div>

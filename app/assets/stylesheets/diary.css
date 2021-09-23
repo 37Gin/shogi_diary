@@ -1,3 +1,6 @@
+/* TOPページのレイアウト */
+
+/* ヘッダーのレイアウト */
 header {
   height: 80px;
   width: 100vw;
@@ -11,6 +14,7 @@ header {
    align-items: center;
    display: flex;
    flex-direction: row;
+   overflow: hidden;
  }
  
  .header-title {
@@ -31,15 +35,19 @@ header {
    font-size: 24px;
  }
 
-
+/* bodyのレイアウト */
  .body-container {
    display: flex;
+   width: 100vw;
+   height: calc(100vh - 80px);
  }
 
+ /* サイドバーのレイアウト */
+
  .side-bar {
-   background-color: lightgreen;
+   background-color: rgb(206, 253, 206);
    width: 150px;
-   height: 100vh;
+   height: 100%;
  }
 
 .side-bar-container {
@@ -67,30 +75,213 @@ header {
   font-size: 18px;
 }
 
+/* メインバーのレイアウト */
 
-.main-bar-container {
-  background-color: rgb(214, 247, 214);
-  width: calc(100vw - 150px);
-  height: 100vh;
+.main-bar {
+  width: calc(100% - 150px);
+  height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   background-color: orange;
+  overflow: scroll;
+  margin-left: 50px;
+  margin-top: 50px;
 }
 
-.diary-container {
+.main-bar-title {
+  font-size: 36px;
   width: 100%;
-  max-width: calc(100vw - 150px - 50px - 50px);
+  height: 50px;
+}
+
+.diary-box {
+  width: 100%;
+  height: calc(100% - 50px);
   background-color: magenta;
-  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.diary-items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
 }
 
-.diary-content {
+.diary-item {
   border: solid 1px black;
-  height: 250px;
-  width: 250px;
-  background-color: mediumturquoise;
-  display: inline-block;
+  height: 450px;
+  width: 400px;
+  background-color: rgb(200, 247, 194);
+  margin-right: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
 }
+
+.diary-item-image {
+  margin-top: 10px;
+  height: 352px;
+  width: 352px;
+  margin: 0 auto;
+  border: solid 1px black;
+}
+
+.diary-item-date {
+  font-size: 16px;
+  text-align: left;
+}
+
+.diary-item-title {
+  font-size: 32px;
+  text-align: center;
+}
+
+.diary-item-user-name {
+  font-size: 24px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.main-bar-button {
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+  justify-content: center;
+}
+
+
+/* 新規投稿ページのレイアウト */
+
+.diary-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.diary-title {
+  font-size: 32px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.diary-form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 日記詳細ページのレイアウト */
+
+.show-diary-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.show-diary-title {
+  font-size: 60px;
+}
+
+.show-diary-content {
+  display: flex;
+  width: 1000px;
+  border-top: dotted 5px black;
+  padding-top: 10px;
+}
+
+.show-diary-detail {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.show-diary-tag {
+  border: solid 1px skyblue;
+  background-color: skyblue;
+  border-radius: 5px;
+  font-size: 22px;
+  margin: 5px 0;
+}
+
+.show-diary-text {
+  font-size: 18px;
+  border: solid 2px gray;
+  width: 380px;
+  height: 500px;
+  overflow: scroll;
+  margin: 10px 0;
+}
+
+.show-diary-user, .show-diary-edit-btn {
+  font-size: 24px;
+  float: right;
+}
+
+.show-diary-edit-btn {
+  color: blue;
+}
+
+.comment-area {
+  width: 600px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.comment-area-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+
+.comment-text {
+  border: dashed 3px;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  max-width: 400px;
+}
+
+.comment-other {
+  border-color: black;
+}
+
+.comment-owner {
+  border-color: green;
+}
+
+.comment-user-name {
+  float: right;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment-text-area {
+  border: solid 2px blue;
+  border-radius: 5px;
+  text-align: left;
+  width: 400px;
+  padding: 10px;
+}
+
+.comment-submit {
+  width: 100px;
+  height: 30px;
+  border: solid 2px blue;
+  margin-top: 5px;
+}
+

@@ -1,31 +1,47 @@
-日記詳細ページ
-<div>
-  <%= @diary.title %>
-</div>
-<div>
-  <%= image_tag @diary.image if @diary.image.attached? %>
-</div>
-<div>
-  <%= @diary.content %>
-</div>
-<div>
-  <%= "tag" %>
-</div>
-<div>
-  <%= link_to "編集", edit_diary_path(@diary.id) %>
-</div>
+<div class="show-diary-container">
 
-<h1>投稿コメント一覧</h1>
-<div>
-  <% @comments.each do |comment| %>
-    <div>
-      <%= comment.comment %>
+  <span class="show-diary-title"><%= @diary.title %></span>
+  <span class="show-diary-tag"><%= "tag1" %></span>
+
+  <div class="show-diary-content">
+    <div class="show-diary-image">
+      <%= image_tag @diary.image.variant(resize: '600x600') if @diary.image.attached? %>
     </div>
-  <% end %>
-</div>
-<div>
-  <%= form_with model: @comment, url: diary_comments_path(@diary.id), local: true do |f| %>
-    <%= f.text_area :comment %>
-    <%= f.submit "投稿" %>
-  <% end %>
+    <div class="show-diary-detail">
+      <% if current_user.id == @diary.user.id %>
+        <div class="show-diary-edit-btn">
+          <%= link_to "この記事を編集", edit_diary_path(@diary.id) %>
+        </div>
+      <% else %>
+        <div class="show-diary-user">
+          <%= link_to "#{@diary.user.name}", user_path(@diary.user.id) %>
+        </div>
+      <% end%>
+      <span class="show-diary-text"><%= @diary.content %></span>
+    </div>
+  </div>
+
+  <div class="comment-area">
+    <h1 class="comment-area-title">★投稿コメント一覧★</h1>
+      <% @comments.each do |comment| %>
+        <% if @diary.user.id == comment.user.id %>
+          <div class="comment-text comment-owner">
+            <div><%= comment.comment %></div>
+            <div class="comment-user-name"><%= comment.user.name %></div>
+          </div>
+        <% else %>
+          <div class="comment-text comment-other">
+            <div><%= comment.comment %></div>
+            <div class="comment-user-name"><%= comment.user.name %></div>
+          </div>
+        <% end %>
+      <% end %>
+      <%= form_with model: @comment, url: diary_comments_path(@diary.id), local: true do |f| %>
+        <div class="comment-form">
+          <%= f.text_area :comment, class: "comment-text-area" %>
+          <%= f.submit "コメントする", class: "comment-submit" %>
+        </div>
+      <% end %>
+  </div>
+
 </div>
