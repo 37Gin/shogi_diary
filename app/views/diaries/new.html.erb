@@ -3,7 +3,7 @@
   新規投稿ページ
   </div>
 
-    <%= form_with model: @diary, local: true do |f| %>
+    <%= form_with model: @diary, url: diaries_path, local: true do |f| %>
     <div class="diary-form">
       <div class="field">
         <%= f.label "タイトル" %><br/>

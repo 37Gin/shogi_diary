@@ -26,7 +26,6 @@ class DiariesController < ApplicationController
 
   def edit
     @diary = Diary.find(params[:id])
-    @tags = Tag.find()
   end
 
   def update
