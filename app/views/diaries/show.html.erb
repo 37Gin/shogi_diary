@@ -1,7 +1,11 @@
 <div class="show-diary-container">
 
   <span class="show-diary-title"><%= @diary.title %></span>
-  <span class="show-diary-tag"><%= "tag1" %></span>
+  <span class="show-diary-tag">
+    <% @diary.tags.each do |tag| %>
+      <%= tag.tag_name %>
+    <% end %>
+  </span>
 
   <div class="show-diary-content">
     <div class="show-diary-image">

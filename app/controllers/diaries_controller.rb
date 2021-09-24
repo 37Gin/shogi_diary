@@ -26,10 +26,12 @@ class DiariesController < ApplicationController
 
   def edit
     @diary = Diary.find(params[:id])
+    @tags = Tag.find()
   end
 
   def update
-    Diary.update(diary_params)
+    diary = Diary.find(params[:id])
+    diary.update(diary_params)
     redirect_to diary_path
   end
 
