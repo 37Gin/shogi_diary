@@ -1,6 +1,7 @@
 class DiariesController < ApplicationController
 
   def index
+    @diaries = Diary.all.includes(:user)
   end
 
   def new

@@ -1,0 +1,18 @@
+<div class="diary-item">
+  <div class="diary-item-date">
+    <%= diary.updated_at %>
+  </div>
+  <div class="diary-item-title">
+    <%= link_to "#{diary.title}", diary_path(diary.id) %>
+  </div>
+  <div class="diary-item-image">
+    <% if diary.image.attached? %>
+      <%= image_tag diary.image.variant(resize: '350x350') %>
+    <% else %>
+      <%= "NO IMAGE" %>
+    <% end %>
+  </div>
+  <div class="diary-item-user-name">
+    <%= link_to "by #{diary.user.name}", user_path(diary.user.id) %>
+  </div>
+</div>

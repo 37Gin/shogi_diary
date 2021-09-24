@@ -16,7 +16,7 @@
 }
 
 .sign-up-form {
-  width: 600px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +34,7 @@ form label {
 .text-form, .text-area {
   width: 300px;
   border-radius: 5px;
-  border: solid 2px blue;
+  border: solid 2px black;
   padding: 5px;
 }
 
@@ -49,9 +49,48 @@ form label {
 .actions {
   width: 100px;
   height: 30px;
-  border: solid 2px blue;
+  border: solid 2px black;
   border-radius: 5px;
   text-align: center;
   margin-bottom: 15px;
   padding: 3px;
+}
+
+/* user詳細ページのレイアウト */
+
+.show-user-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-user-detail {
+  text-align: center;
+}
+
+.show-user-intro {
+  font-size: 24px;
+  margin: 10px 0;
+  padding: 10px;
+  border-bottom: double 3px black;
+  border-top: double 3px black;
+}
+
+.show-user-name {
+  font-size: 48px;
+}
+
+.show-user-diary-list {
+  text-align: center;
+  font-size: 40px;
+}
+
+.show-user-diaries {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

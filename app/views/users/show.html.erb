@@ -1,17 +1,15 @@
-<%= "#{@user.name}さんのページ" %>
-<%= link_to "編集", edit_user_path(@user.id) %>
+<div class="show-user-container">
 
-<div>
-  <%= "自己紹介文" %><br/>
-  <%= @user.introduction %>
+<div class="show-user-detail">
+<p class="show-user-name"><%= "#{@user.name}さんの日記一覧" %></p>
+<p class="show-user-intro"><%= @user.introduction %></p>
+
 </div>
 
-<div>
-  <%= "投稿記事一覧" %><br/>
-  <% @diaries.each do |diary| %>
-    <%= diary.title %>
-    <%= link_to "詳細", diary_path(diary.id) %>
-    <%= link_to "編集", edit_diary_path(diary.id) %>
-    <%= image_tag diary.image if diary.image.attached? %>
-  <% end %>
+<span class="show-user-diary-list"><%= "投稿記事一覧" %><br/>
+
+<div class="show-user-diaries">
+  <%= render partial: 'diaries/diary-list', collection: @diaries, as: "diary" %>
+</div>
+
 </div>
