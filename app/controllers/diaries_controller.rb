@@ -9,7 +9,7 @@ class DiariesController < ApplicationController
   end
 
   def create
-    @diary = DiaryTag.new(diary_params)
+    @diary = DiaryTag.new(diary_tag_params)
     if @diary.valid?
       @diary.save
       return redirect_to root_path
@@ -35,8 +35,12 @@ class DiariesController < ApplicationController
 
   private
 
-  def diary_params
+  def diary_tag_params
     params.require(:diary_tag).permit(:title, :content, :image, :tag_name).merge(user_id: current_user.id)
+  end
+
+  def diary_params
+    params.require(:diary).permit(:title, :content, :image).merge(user_id: current_user.id)
   end
   
 end
