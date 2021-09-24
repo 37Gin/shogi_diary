@@ -1,6 +1,6 @@
 <h1>新規投稿ページ</h1>
 
-<%= form_with model: @diary, local: true do |f| %>
+<%= form_with model: @diary, url: diaries_path, local: true do |f| %>
   <div>
     <%= f.label "タイトル" %>
     <%= f.text_field :title %>
@@ -15,6 +15,7 @@
   </div>
   <div>
     <%= f.label "タグ" %>
+    <%= f.text_field :tag_name %>
   </div>
   <div>
     <%= f.submit "投稿" %>
