@@ -5,12 +5,18 @@ class DiariesController < ApplicationController
   end
 
   def new
-    @diary = Diary.new
+<<<<<<< Updated upstream
+    @diary = DiaryTag.new
   end
 
   def create
-    Diary.create(diary_params)
-    redirect_to root_path
+    @diary = DiaryTag.new(diary_params)
+    if @diary.valid?
+      @diary.save
+      return redirect_to root_path
+    else
+      render "new"
+    end
   end
 
   def show
@@ -31,7 +37,7 @@ class DiariesController < ApplicationController
   private
 
   def diary_params
-    params.require(:diary).permit(:title, :content, :image).merge(user_id: current_user.id)
+    params.require(:diary_tag).permit(:title, :content, :image, :tag_name).merge(user_id: current_user.id)
   end
   
 end
