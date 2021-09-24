@@ -4,6 +4,7 @@ class DiariesController < ApplicationController
   end
 
   def new
+<<<<<<< Updated upstream
     @diary = DiaryTag.new
   end
 
