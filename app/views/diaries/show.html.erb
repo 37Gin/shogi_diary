@@ -12,7 +12,7 @@
       <%= image_tag @diary.image.variant(resize: '600x600') if @diary.image.attached? %>
     </div>
     <div class="show-diary-detail">
-      <% if current_user.id == @diary.user.id %>
+      <% if current_user != nil && @diary.user.id == current_user.id %>
         <div class="show-diary-edit-btn">
           <%= link_to "この記事を編集", edit_diary_path(@diary.id) %>
         </div>
@@ -27,25 +27,27 @@
 
   <div class="comment-area">
     <h1 class="comment-area-title">★投稿コメント一覧★</h1>
-      <% @comments.each do |comment| %>
-        <% if @diary.user.id == comment.user.id %>
-          <div class="comment-text comment-owner">
-            <div><%= comment.comment %></div>
-            <div class="comment-user-name"><%= comment.user.name %></div>
-          </div>
-        <% else %>
-          <div class="comment-text comment-other">
-            <div><%= comment.comment %></div>
-            <div class="comment-user-name"><%= comment.user.name %></div>
-          </div>
-        <% end %>
+    <% @comments.each do |comment| %>
+      <% if @diary.user.id == comment.user.id %>
+        <div class="comment-text comment-owner">
+          <div><%= comment.comment %></div>
+          <div class="comment-user-name"><%= comment.user.name %></div>
+        </div>
+      <% else %>
+        <div class="comment-text comment-other">
+          <div><%= comment.comment %></div>
+          <div class="comment-user-name"><%= comment.user.name %></div>
+        </div>
       <% end %>
+    <% end %>
+    <% if user_signed_in? %>
       <%= form_with model: @comment, url: diary_comments_path(@diary.id), local: true do |f| %>
         <div class="comment-form">
           <%= f.text_area :comment, class: "comment-text-area" %>
           <%= f.submit "コメントする", class: "comment-submit" %>
         </div>
       <% end %>
+    <% end %>
   </div>
 
 </div>
