@@ -11,6 +11,7 @@
     <div class="tag-forms">
         <%= f.text_field :tag_name, class: "tag-form" %>
         <%= f.submit "＋", class: "tag-button" %>
+        <%= hidden_field_tag "tag[diary_ids][]", @diary.id %>
         </div>
     <% end %>
   </div>

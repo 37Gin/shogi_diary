@@ -22,6 +22,7 @@ class DiariesController < ApplicationController
     @diary = Diary.find(params[:id])
     @comment = Comment.new
     @comments = @diary.comments.includes(:user)
+    @tag = Tag.new
   end
 
   def edit
