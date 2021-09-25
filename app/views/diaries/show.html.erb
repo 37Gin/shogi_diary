@@ -1,11 +1,20 @@
 <div class="show-diary-container">
 
-  <span class="show-diary-title"><%= @diary.title %></span>
-  <span class="show-diary-tag">
+  <div class="show-diary-title"><%= @diary.title %></div>
+  <div class="tag-container">
     <% @diary.tags.each do |tag| %>
-      <%= tag.tag_name %>
+      <div class="tag-name">
+        <%= tag.tag_name %>
+      </div>
     <% end %>
-  </span>
+    <%= form_with model: @tag, url: tags_path, local: true do |f| %>
+    <div class="tag-forms">
+        <%= f.text_field :tag_name, class: "tag-form" %>
+        <%= f.submit "＋", class: "tag-button" %>
+        <%= hidden_field_tag "tag[diary_ids][]", @diary.id %>
+        </div>
+    <% end %>
+  </div>
 
   <div class="show-diary-content">
     <div class="show-diary-image">
