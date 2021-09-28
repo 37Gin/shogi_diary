@@ -6,4 +6,12 @@ class Diary < ApplicationRecord
   has_many :tags, through: :diary_tag_relations
 
   validates :title, presence: true
+
+  def self.search(search)
+    if search != ""
+      Diary.where(['title LIKE(?) OR content LIKE(?)', "%#{search}%", "%#{search}%"])
+    else
+      Diary.all
+    end
+  end
 end
