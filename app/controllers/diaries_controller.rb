@@ -35,6 +35,11 @@ class DiariesController < ApplicationController
     redirect_to diary_path
   end
 
+  def search
+    @diaries = Diary.search(params[:keyword])
+    render action: "index"
+  end
+
   private
 
   def diary_tag_params
