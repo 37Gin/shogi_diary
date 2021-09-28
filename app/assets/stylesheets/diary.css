@@ -75,6 +75,32 @@ header {
   font-size: 18px;
 }
 
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.search-input {
+  font-size: 14px;
+  width: 130px;
+  height: 30px;
+  text-align: center;
+  border: solid 2px green;
+  border-radius: 10px;
+}
+
+.search-btn {
+  font-size: 16px;
+  margin-top: 10px;
+  padding: 3px 10px;
+  border: solid 1px green;
+  border-radius: 10px;
+  color: white;
+  background-color: green;
+}
+
 /* メインバーのレイアウト */
 
 .main-bar {
