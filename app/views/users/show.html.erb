@@ -1,15 +1,14 @@
 <div class="show-user-container">
 
-<div class="show-user-detail">
-<p class="show-user-name"><%= "#{@user.name}さんの日記一覧" %></p>
-<p class="show-user-intro"><%= @user.introduction %></p>
+  <div class="show-user-detail">
+    <p class="show-user-name"><%= "#{@user.name}さんの日記一覧" %></p>
+    <p class="show-user-intro"><%= @user.introduction %></p>
+  </div>
 
-</div>
+  <span class="show-user-diary-list"><%= "投稿記事一覧" %><br/>
 
-<span class="show-user-diary-list"><%= "投稿記事一覧" %><br/>
-
-<div class="show-user-diaries">
-  <%= render partial: 'diaries/diary-list', collection: @diaries, as: "diary" %>
-</div>
+  <div class="show-user-diaries">
+    <%= render partial: 'diaries/diary-list', collection: @diaries, as: "diary" %>
+  </div>
 
 </div>

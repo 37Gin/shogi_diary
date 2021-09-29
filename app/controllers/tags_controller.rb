@@ -8,6 +8,10 @@ class TagsController < ApplicationController
     redirect_to diary_path(@tag.diary_id)
   end
 
+  def show
+    @tag = Tag.find(params[:id])
+  end
+
   private
 
   def tag_params
