@@ -10,21 +10,21 @@
         <%= "<user_list>" %>
       </div>
       <ul class="user-name-list">
-        <li class="user-name">user_name</li>
-        <li class="user-name">user_name</li>
-        <li class="user-name">user_name</li>
-        <li class="user-name">user_name</li>
-        <li class="user-name">user_name</li>
+        <% @users.each do |user| %>
+          <li class="user-name">
+            <%= link_to "#{user.name}", user_path(user.id) %>
+          </li>
+        <% end %>
       </ul>
       <div class="tag-name-list-title">
         <%= "<tag_list>" %>
       </div>
       <ul class="tag-name-list">
-        <li class="tag-name">tag_name</li>
-        <li class="tag-name">tag_name</li>
-        <li class="tag-name">tag_name</li>
-        <li class="tag-name">tag_name</li>
-        <li class="tag-name">tag_name</li>
+        <% @tags.each do |tag| %>
+          <li class="tag-name">
+            <%= link_to "#{tag.tag_name}", tag_path(tag.id) %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

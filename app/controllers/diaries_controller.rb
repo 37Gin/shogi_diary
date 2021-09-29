@@ -2,6 +2,8 @@ class DiariesController < ApplicationController
 
   def index
     @diaries = Diary.all.includes(:user)
+    @users = User.all
+    @tags = Tag.all
   end
 
   def new
