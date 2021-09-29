@@ -1,6 +1,6 @@
 <div class="show-user-container">
 
-<span class="show-user-diary-list"><%= "#{@tag.tag_name}の投稿記事一覧" %><br/>
+<span class="show-user-diary-list"><%= "”#{@tag.tag_name}”の投稿記事一覧" %><br/>
 
   <div class="show-user-diaries">
     <%= render partial: 'diaries/diary-list', collection: @tag.diaries, as: "diary" %>

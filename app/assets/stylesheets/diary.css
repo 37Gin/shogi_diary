@@ -55,37 +55,18 @@ header {
   flex-direction: column;
 }
 
-.user-name-list-title {
-  font-size: 20px;
-  text-align: center;
-}
-
-.user-name-list {
-  margin-left: 10px;
-  font-size: 18px;
-}
-
-.tag-name-list-title {
-  font-size: 20px;
-  text-align: center;
-}
-
-.tag-name-list {
-  margin-left: 10px;
-  font-size: 18px;
-}
-
 .search-form {
+  height: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 .search-input {
   font-size: 14px;
-  width: 130px;
   height: 30px;
+  width: 130px;
   text-align: center;
   border: solid 2px green;
   border-radius: 10px;
@@ -99,6 +80,39 @@ header {
   border-radius: 10px;
   color: white;
   background-color: green;
+}
+
+.user-name-list-title {
+  font-size: 20px;
+  text-align: center;
+  height: 30px;
+}
+
+.user-name-list {
+  font-size: 16px;
+  border-top: double 5px black;
+  height: 200px;
+  overflow: scroll;
+  padding: 10px;
+}
+
+.tag-name-list-title {
+  font-size: 20px;
+  text-align: center;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.tag-name-list {
+  height: 100%;
+  overflow: scroll;
+  border-top: double 5px black;
+  height: calc(100vh - 80px - 80px - 30px - 200px - 10px - 30px);
+  padding: 10px;
+}
+
+.side-bar-tag-name {
+  font-size: 16px;
 }
 
 /* メインバーのレイアウト */
