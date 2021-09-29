@@ -39,6 +39,8 @@ class DiariesController < ApplicationController
 
   def search
     @diaries = Diary.search(params[:keyword])
+    @users = User.all
+    @tags = Tag.all
     render action: "index"
   end
 
