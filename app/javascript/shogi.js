@@ -1,6 +1,8 @@
 function shogiBoard() {
 
   const canvas = document.getElementById('myCanvas');
+  canvas.width = 700;
+  canvas.height = 650;
   const ctx = canvas.getContext('2d');
   ctx.strokeStyle = "black";
   var inMotion = 0;
@@ -606,6 +608,21 @@ function shogiBoard() {
   showPieceOutBoard();
   canvas.addEventListener('click', selectBoard, false);
   showMessage();
+
+  document.getElementById('download-link').addEventListener('click', (e) => {
+  // data:URLを自身のリンク先として設定すると、このあとダウンロードされる
+  canvas.height = 525;
+  drawBoard();
+  showPieceInBoard();
+  showPieceOutBoard();
+    const a = e.target;
+    a.href = canvas.toDataURL(); // Canvasからdata:URLを取得
+    a.download = new Date().getTime() + '.png'; // ダウンロードファイル名はタイムスタンプに設定
+  canvas.height = 650;
+  drawBoard();
+  showPieceInBoard();
+  showPieceOutBoard();
+  });
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
