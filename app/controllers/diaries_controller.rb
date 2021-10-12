@@ -44,6 +44,9 @@ class DiariesController < ApplicationController
     render action: "index"
   end
 
+  def kyokumenzu
+  end
+
   private
 
   def diary_tag_params
