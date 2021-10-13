@@ -14,7 +14,7 @@ header {
    align-items: center;
    display: flex;
    flex-direction: row;
-   overflow: hidden;
+   overflow: auto;
  }
  
  .header-title {
@@ -123,7 +123,6 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: orange;
   overflow: scroll;
   margin-left: 50px;
 }
@@ -138,7 +137,6 @@ header {
 .diary-box {
   width: 100%;
   height: calc(100% - 50px);
-  background-color: magenta;
   display: flex;
   flex-direction: column;
   overflow: scroll;
@@ -154,7 +152,6 @@ header {
   border: solid 1px black;
   height: 450px;
   width: 400px;
-  background-color: rgb(200, 247, 194);
   margin-right: 50px;
   margin-top: 50px;
   display: flex;
@@ -362,5 +359,42 @@ header {
   height: 30px;
   border: solid 2px blue;
   margin-top: 5px;
+}
+
+/* 局面図編集ページ */
+
+.kyokumenzu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.kyokumenzu-title {
+  font-size: 36px;
+  margin: 20px 0;
+}
+
+.my-canvas {
+  border: solid 2px black;
+  width: 700px;
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+}
+
+.kyokumenzu-name {
+  text-align: center;
+  font-size: 36px;
+  height: 50px;
+  max-width: 700px;
+}
+
+.download-link {
+  font-size: 24px;
+  margin: 20px 0;
+  padding: 10px;
+  border: solid 2px blue;
+  border-radius: 20px;
 }
 
