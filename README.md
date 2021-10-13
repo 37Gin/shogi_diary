@@ -61,7 +61,7 @@ Pass: test00
 
 ## データベース設計
 
-## usersテーブル
+### usersテーブル
 
 | Column             | Type   | Options                   |
 | ------------------ | ------ | ------------------------- |
@@ -70,12 +70,12 @@ Pass: test00
 | encrypted_password | string | null: false               |
 | introduction       | text   |                           |
 
-### Association
+#### Association
 
 has_many :diaries  
 has_many :comments  
 
-## diariesテーブル
+### diariesテーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
@@ -83,14 +83,14 @@ has_many :comments
 | content | text       |                                |
 | user    | references | null: false, foreign_key: true |
 
-### Association
+#### Association
 
 belongs_to :user  
 has_many :comments  
 has_many :tags, through: :diary_tags  
 has_many :diary_tags  
 
-## commentsテーブル
+### commentsテーブル
 
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
@@ -98,30 +98,32 @@ has_many :diary_tags
 | user     | references | null: false, foreign_key: true |
 | diary    | references | null: false, foreign_key: true |
 
-### Association
+#### Association
 
 belongs_to :user  
 belongs_to :diary  
 
-## diary_tagsテーブル
+### diary_tagsテーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | diary  | references | null: false, foreign_key: true |
 | tag    | references | null: false, foreign_key: true |
 
-### Association
+#### Association
 
 belongs_to :diary  
 belongs_to :tag  
 
-## tagsテーブル
+### tagsテーブル
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
 | name   | string | null: false |
 
-### Association
+#### Association
 
 has_many :diaries, through: :diary_tags  
 has_many :diary_tags  
+
+## ローカルでの動作方法
