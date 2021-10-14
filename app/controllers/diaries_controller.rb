@@ -1,7 +1,7 @@
 class DiariesController < ApplicationController
 
   def index
-    @diaries = Diary.all.includes(:user)
+    @diaries = Diary.all.includes(:user).order("created_at DESC")
     @users = User.all
     @tags = Tag.all
   end
