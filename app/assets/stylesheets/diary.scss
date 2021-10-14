@@ -52,9 +52,9 @@ header {
  /* サイドバーのレイアウト */
 
  .side-bar {
-   background-color: rgb(206, 253, 206);
    width: 150px;
    height: 100%;
+   border-right: solid 3px black;
  }
 
 .side-bar-container {
