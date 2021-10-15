@@ -376,6 +376,16 @@ function shogiBoard() {
     }
   }
 
+  function moveToMochigoma(selectEnemy) {
+    type = board[startSuji][startDan].type;
+    pieceType(type);
+    outBoard[selectEnemy][type].number += 1;
+    board[startSuji][startDan].type = 0;
+    board[startSuji][startDan].status = 0;
+    board[startSuji][startDan].is_enemy = 0;
+    message = moji + "を持駒に移動しました"
+  }
+
   function removePiece() {
     pieceType(board[startSuji][startDan].type);
     outBoard[3][board[startSuji][startDan].type].number += 1;
@@ -587,6 +597,10 @@ function shogiBoard() {
       inMotion = 0;
     } else if (inMotion == 1 && selectSuji == 10 && selectDan == 10 ) {
       removePiece();
+      paintSquare(startSuji, startDan, "#000000");
+      inMotion = 0;
+    } else if (inMotion == 1 && 1 <= selectBoxX && selectBoxX <= 2 && 1 <= selectBoxY && selectBoxY <= 10) {
+      moveToMochigoma(selectEnemy);
       paintSquare(startSuji, startDan, "#000000");
       inMotion = 0;
     } else if (inMotion == 2 && 1 <= selectSuji && selectSuji <= 9 && 1 <= selectDan && selectDan <= 9 ) {
