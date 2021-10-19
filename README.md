@@ -127,3 +127,11 @@ has_many :diaries, through: :diary_tags
 has_many :diary_tags  
 
 ## ローカルでの動作方法
+git clone https://github.com/37Gin/shogi_diary.git  
+cd shogi_diary  
+bundle install  
+yarn install  
+rails db:create  
+rails db:migrate  
+（seedファイルに用意しているテストアカウントと投稿記事の反映）  
+rails db:seed
