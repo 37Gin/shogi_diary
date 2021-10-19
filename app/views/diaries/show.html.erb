@@ -22,9 +22,10 @@
     </div>
     <div class="show-diary-detail">
       <% if current_user != nil && @diary.user.id == current_user.id %>
-        <div class="show-diary-edit-btn">
-          <%= link_to "この記事を編集", edit_diary_path(@diary.id) %>
-        </div>
+        <span class="show-diary-edit-btns">
+          <%= link_to "この記事を編集", edit_diary_path(@diary.id), class: "show-diary-edit-btn" %>
+          <%= link_to "削除", diary_path(@diary.id), method: :delete, class: "show-diary-edit-btn" %>
+        </span>
       <% else %>
         <div class="show-diary-user">
           <%= link_to "#{@diary.user.name}", user_path(@diary.user.id) %>

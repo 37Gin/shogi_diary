@@ -44,6 +44,15 @@ class DiariesController < ApplicationController
     render action: "index"
   end
 
+  def destroy
+    @diary = Diary.find(params[:id])
+    if @diary.destroy
+      redirect_to user_path(@diary.user.id)
+    else
+      render diary_path(@diary.id)
+    end
+  end
+
   def kyokumenzu
   end
 
