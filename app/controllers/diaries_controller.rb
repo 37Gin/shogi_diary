@@ -44,6 +44,9 @@ class DiariesController < ApplicationController
     render action: "index"
   end
 
+  def destroy
+  end
+
   def kyokumenzu
   end
 
