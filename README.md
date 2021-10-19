@@ -17,7 +17,7 @@ Mail: sample1@mail.com
 Pass: test00  
 
 ユーザー2  
-Mail: sample2@email.com  
+Mail: sample2@mail.com  
 Pass: test00  
 
 ## 利用方法
@@ -119,7 +119,7 @@ belongs_to :tag
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
-| name   | string | null: false |
+| tag_name   | string | null: false |
 
 #### Association
 
