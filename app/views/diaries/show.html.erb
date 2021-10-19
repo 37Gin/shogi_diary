@@ -25,6 +25,9 @@
         <div class="show-diary-edit-btn">
           <%= link_to "この記事を編集", edit_diary_path(@diary.id) %>
         </div>
+        <div class="show-diary-destroy-btn">
+          <%= link_to "削除", diary_path(@diary.id), method: :delete %>
+        </div>
       <% else %>
         <div class="show-diary-user">
           <%= link_to "#{@diary.user.name}", user_path(@diary.user.id) %>
